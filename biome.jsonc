@@ -12,14 +12,12 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": [
-      "./*",
-      "!package.json"
-    ]
+    "includes": ["./*", "!package.json"]
   },
   "formatter": {
     "enabled": true,
-    "lineWidth": 120,
+    "expand": "auto",
+    "formatWithErrors": false,
     "useEditorconfig": true
   },
   "javascript": {

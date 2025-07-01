@@ -1,21 +1,13 @@
 {
   "compilerOptions": {
     "esModuleInterop": true,
-    "lib": [
-      "DOM",
-      "ES2022",
-      "ESNext.Disposable"
-    ],
+    "lib": ["DOM", "ES2022", "ESNext.Disposable"],
     "module": "nodenext",
     "moduleResolution": "nodenext",
     "outDir": "./dist",
     "strict": true,
     "target": "es2022"
   },
-  "exclude": [
-    "node_modules"
-  ],
-  "include": [
-    "src"
-  ]
+  "exclude": ["node_modules"],
+  "include": ["src"]
 }

@@ -14,7 +14,7 @@
     "build": "tsc",
     "clean": "rm -rf dist",
     "inspect": "npx @modelcontextprotocol/inspector node ./dist/cli.js",
-    "lint": "@biomejs/biome ci .",
+    "lint": "biome ci .",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
     "watch": "tsc --watch"

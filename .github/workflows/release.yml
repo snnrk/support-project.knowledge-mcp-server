@@ -25,6 +25,6 @@ jobs:
         env:
           NODE_ENV: production
       - name: Publish Package
-        run: npm publish publish --access=public
+        run: npm publish --access=public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

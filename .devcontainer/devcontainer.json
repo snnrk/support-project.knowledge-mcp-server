@@ -1,0 +1,48 @@
+{
+  "name": "knowledge-mcp",
+  "image": "mcr.microsoft.com/devcontainers/typescript-node:1-22-bookworm",
+  "workspaceMount": "source=${localWorkspaceFolder},target=${containerWorkspaceFolder},type=bind,consistency=cached",
+  "mounts": [
+    {
+      "type": "volume",
+      "target": "${containerWorkspaceFolder}/node_modules"
+    }
+  ],
+  "onCreateCommand": "bash ${containerWorkspaceFolder}/.devcontainer/scripts/on-create.sh",
+  "postAttachCommand": "bash ${containerWorkspaceFolder}/.devcontainer/scripts/post-start.sh",
+  "postCreateCommand": "bash ${containerWorkspaceFolder}/.devcontainer/scripts/post-create.sh",
+  "features": {},
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "biomejs.biome",
+        "ryanluker.vscode-coverage-gutters",
+        "vitest.explorer"
+      ],
+      "settings": {
+        "[javascript][typescript][javascriptreact][typescriptreact][json][jsonc]": {
+          "editor.defaultFormatter": "biomejs.biome",
+          "editor.formatOnSave": true
+        },
+        "coverage-gutters.coverageReportFileName": "coverage/index.html",
+        "coverage-gutters.showGutterCoverage": true,
+        "coverage-gutters.showLineCoverage": true,
+        "coverage-gutters.showRulerCoverage": true,
+        "editor.codeActionsOnSave": {
+          "quickfix.biome": "explicit",
+          "source.fixAll": "never",
+          "source.fixAll.biome": "explicit",
+          "source.organizeImports.biome": "explicit"
+        },
+        "explorer.fileNesting.enabled": true,
+        "explorer.fileNesting.patterns": {
+          "*.ts": "${capture}.test.ts"
+        }
+      }
+    }
+  },
+  "containerEnv": {
+    "CONTAINER_WORKSPACE_FOLDER": "${containerWorkspaceFolder}",
+    "LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
+  }
+}

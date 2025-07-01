@@ -1,0 +1,30 @@
+name: Publish Package
+on:
+  release:
+    types: [published]
+jobs:
+  test:
+    uses: ./.github/workflows/test.yml
+  release:
+    name: Publish package
+    needs: [test]
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Install Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: "18"
+          registry-url: https://registry.npmjs.org
+          always-auth: true
+          scope: "@snnrk"
+      - name: Install Dependencies
+        run: npm clean-install --include=dev
+      - name: Build Package
+        run: npm run build
+        env:
+          NODE_ENV: production
+      - name: Publish Package
+        run: npm publish publish --access=public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

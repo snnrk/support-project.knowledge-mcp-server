@@ -1,0 +1,39 @@
+{
+  "name": "@snnrk/support-project.knowledge-mcp-server",
+  "version": "0.0.1",
+  "description": "Knowledge (support-project) Tools for MCP",
+  "type": "module",
+  "bin": {
+    "knowledge-search-mcp-server": "./dist/cli.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc",
+    "clean": "rm -rf dist",
+    "inspect": "npx @modelcontextprotocol/inspector node ./dist/cli.js",
+    "watch": "tsc --watch",
+    "test": "vitest run",
+    "test:coverage": "vitest run --coverage",
+    "lint": "@biomejs/biome ci ."
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.13.2",
+    "playwright": "^1.53.1",
+    "yargs": "^18.0.0",
+    "zod": "^3.25.67"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.0.6",
+    "@types/node": "^24.0.4",
+    "@types/yargs": "^17.0.33",
+    "@vitest/coverage-v8": "^1.4.0",
+    "typescript": "^5.8.3",
+    "vitest": "^1.4.0"
+  }
+}

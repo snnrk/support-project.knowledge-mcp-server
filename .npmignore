@@ -1,0 +1,10 @@
+.devcontainer/
+.github/
+.vscode/
+coverage/
+src/
+.editorconfig
+biome.jsonc
+cspell.config.yaml
+tsconfig.json
+vitest.config.ts

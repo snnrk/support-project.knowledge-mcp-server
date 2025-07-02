@@ -1,0 +1,12 @@
+{
+  "servers": {
+    "knowledge-search": {
+      "command": "npx",
+      "args": [
+        "@snnrk/support-project.knowledge-mcp-server",
+        "--url",
+        "https://knowledge.develop.rworks-ms.jp"
+      ]
+    }
+  }
+}

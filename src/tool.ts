@@ -102,7 +102,7 @@ export default async function (server: McpServer, options: ToolOptions) {
         createdAt: result.createdAt,
         tags: result.tags,
         title: result.title,
-        url: `${getSearchUrl(options.url)}${result.url}`,
+        url: `${options.url}${result.url}`,
       }));
 
       const structuredContent: { [key: string]: unknown } = {

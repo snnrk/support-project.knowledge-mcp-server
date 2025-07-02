@@ -208,7 +208,7 @@ describe('Default export function (MCP server registration)', () => {
 
       // Verify URL is correctly formatted
       const items = result.structuredContent.items as any[];
-      expect(items[0].url).toContain('https://example.com/open.knowledge/list');
+      expect(items[0].url).toContain('https://example.com/test-article');
     }
   });
 });
